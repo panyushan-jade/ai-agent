@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  ai-customer-service:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./docs:/app/docs         # 方便更新知识库文档
+      - ./chroma_db:/app/chroma_db  # 持久化向量数据库
+    restart: unless-stopped

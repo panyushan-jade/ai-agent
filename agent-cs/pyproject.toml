@@ -1,0 +1,21 @@
+[project]
+name = "ai-customer-service"
+version = "0.1.0"
+description = "AI Agent 智能客服系统"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=1.2.15",
+    "langgraph>=1.1.6",
+    "langchain-openai>=0.3",
+    "langchain-community>=0.3",
+    "chromadb>=0.6",
+    "openai>=1.60",
+    "fastapi>=0.115",
+    "uvicorn>=0.34",
+    "python-dotenv>=1.0",
+    "langchain-text-splitters>=1.1.1",
+]
+
+[[tool.uv.index]]
+url ="https://mirrors.aliyun.com/pypi/simple/"
+default = true

@@ -1,0 +1,20 @@
+
+
+uv 管理python和依赖的工具 相比Anaconda更轻量级 适合小项目和个人使用
+
+ollama 将大模型下载下来 自己本地管理/运行(私域) 对电脑有一定要求,py调用本地大模型，需安装langchain-ollama库
+
+使用阿里云镜像源加速依赖安装
+[[tool.uv.index]]
+url ="https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
+langchain核心功能
+  1、模型(Models)：提供统接调各种LLM，如OpenAl的GPT系列、Anthropic的Claude系列、Google的Gemini系列，以及HuggingFace的开源模型
+  2、提示(Prompts)：优化模型输，提升成结果的质量，包括PromptTemplate、ChatPromptTemplate和FewShotPromptTemplate等
+  3、链(Chains)：封装多个组件的调序列，创建复杂的作流程，如SimpleSequentialChain等。
+  4、记忆(Memory)：存储和检索对话数据，持上下感知的应，如多轮对话系统。
+  5、索引(Indexes)：组织和检索档数据，持RAG（检索增强成）等应场景。
+  6、工具(Tools)：提供各种实用工具，如搜索、计算、数据库访问等，扩展模型的功能。
+  7、结构化数据(Structured Data)：处理和生成结构化数据，如表格、JSON等。
+  8、评估(Evaluation)：评估模型性能和结果质量，提供各种评测方法和指标。
