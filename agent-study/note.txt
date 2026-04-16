@@ -18,3 +18,27 @@ langchain核心功能
   6、工具(Tools)：提供各种实用工具，如搜索、计算、数据库访问等，扩展模型的功能。
   7、结构化数据(Structured Data)：处理和生成结构化数据，如表格、JSON等。
   8、评估(Evaluation)：评估模型性能和结果质量，提供各种评测方法和指标。
+
+  Function Calling与Tool Use实战
+  RAG检索增强架构全景解析
+
+  向量数据库选型（Milvus/Pinecone/Chroma/PGVector）
+  向量数据库底层原理（ANN算法/索引结构）
+  Embedding模型选型与优化
+  混合检索策略（向量+关键词+重排序）
+  RAG效果评估与幻觉处理
+
+  预训练（Pre-training） vs 微调（Fine-tuning）
+  全量微调（Full Fine-tuning）与 ⾼效参数微调（PEFT）
+
+  pythonperl
+
+### 结构化输出的好处
+
+| 好处 | 说明 |
+|---|---|
+| **类型安全** | 返回值是 Pydantic 对象而非自由文本，字段有类型约束和校验（如 `confidence` 只能是 high/medium/low） |
+| **可编程消费** | 下游代码可直接 `response.answer`、`response.needs_human` 取值，无需正则/解析自然语言 |
+| **自动重试** | 如果 LLM 输出不符合 schema（如 rating 超范围），LangChain 会自动校验并让模型重试 |
+| **确定性格式** | 每次调用的返回结构一致，方便接入前端渲染、数据库存储、日志分析等 |
+| **业务路由** | 可以根据 `needs_human`、`confidence` 等字段自动触发业务逻辑（如低置信度转人工） |
