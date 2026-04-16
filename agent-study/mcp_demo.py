@@ -7,12 +7,7 @@ from dotenv import load_dotenv
 from langchain.agents import create_agent  # 新版Agent创建方式
 from langgraph.checkpoint.memory import MemorySaver  # 对话记忆
 
-# 文档加载与处理 (用于RAG)
-from langchain_community.document_loaders import DirectoryLoader, TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-
 # 向量数据库与嵌入模型
-from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 
 # 模型与工具
@@ -21,6 +16,9 @@ from langchain_core.tools.retriever import create_retriever_tool
 
 # MCP 客户端，用于连接高德地图 MCP 服务
 from langchain_mcp_adapters.client import MultiServerMCPClient
+
+# 知识库管理
+from knowledge import load_or_rebuild_vectorstore
 
 print("1. 正在加载环境变量...")
 # 加载 .env 文件中的环境变量
@@ -46,23 +44,7 @@ embeddings = OpenAIEmbeddings(
 
 # 3. 构建知识库 (RAG - 检索增强生成)
 print("3. 正在加载并处理知识库文档...")
-# 加载 './knowledge_base' 目录下的所有 .txt 文件
-loader = DirectoryLoader(
-    "./knowledge_base",
-    glob="**/*.txt",
-    loader_cls=TextLoader,
-    loader_kwargs={"encoding": "utf-8"},
-)
-documents = loader.load()
-
-# 将长文档分割成小块，便于检索
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-texts = text_splitter.split_documents(documents)
-
-# 创建向量数据库 (Chroma)，并将分割后的文档块存入
-vectorstore = Chroma.from_documents(
-    documents=texts, embedding=embeddings, persist_directory="./chroma_db"
-)
+vectorstore = load_or_rebuild_vectorstore(embeddings)
 
 # 将检索器 (Retriever) 封装成一个工具，让 Agent 可以调用它来查询知识库
 retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
