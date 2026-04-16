@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# 向量数据库（运行时生成）
+chroma_db/
