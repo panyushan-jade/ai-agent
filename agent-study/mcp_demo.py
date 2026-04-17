@@ -19,6 +19,8 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 
 # 知识库管理
 from knowledge import load_or_rebuild_vectorstore
+# 提示词版本管理
+from prompt_manager import load_prompt
 
 print("1. 正在加载环境变量...")
 # 加载 .env 文件中的环境变量
@@ -81,11 +83,7 @@ agent = create_agent(
     model=llm,
     tools=[retriever_tool] + mcp_tools,  # 知识库检索 + 高德地图 MCP 工具
     checkpointer=memory,
-    system_prompt="""你是一个专业的、乐于助人的智能客服助手。
-    你的主要职责是回答用户的问题，解决问题，并提供帮助。
-    在回答问题时，请优先使用"search_knowledge_base"工具查询公司内部知识库。
-    当用户询问天气、地图、路线等信息时，请使用高德地图相关工具。
-    如果知识库中没有相关信息，或者问题超出你的知识范围，请礼貌地告知用户，并建议他们联系人工客服。""",
+    system_prompt=load_prompt("v1"),  # 从 prompts/v1.yaml 加载，切版本只需改这里
 )
 
 # 6. 启动交互式对话

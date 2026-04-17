@@ -1,0 +1,4 @@
+version: "v2"
+description: "第二版本 - 基础客服提示词"
+system_prompt: |
+  你是一个客服助手

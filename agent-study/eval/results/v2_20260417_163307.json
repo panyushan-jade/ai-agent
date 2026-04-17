@@ -1,0 +1,64 @@
+{
+  "version": "v2",
+  "timestamp": "20260417_163307",
+  "avg_score": 4.285714285714286,
+  "total_cases": 7,
+  "results": [
+    {
+      "question": "你们的退货政策是什么？",
+      "category": "退货",
+      "answer": "我们的退货政策如下：\n\n1.  **无理由退货**：自收到商品之日起 **7天内**，如果商品**未拆封**，支持无理由退货。\n2.  **质量问题退换**：如果商品**已拆封**但存在质量问题，在 **15天内** 可申请退换。\n3.  **运费说明**：退货运费由我们承担。\n\n如果您需要办理退货或有其他疑问，请随时告诉我。",
+      "keyword_score": 5.0,
+      "llm_score": null,
+      "final_score": 5.0
+    },
+    {
+      "question": "如何查询订单状态？",
+      "category": "订单",
+      "answer": "您可以直接提供您的**订单号**，我会为您实时查询订单的物流状态以及预计送达时间。",
+      "keyword_score": 5.0,
+      "llm_score": null,
+      "final_score": 5.0
+    },
+    {
+      "question": "你们支持哪些支付方式？",
+      "category": "支付",
+      "answer": "我们支持以下支付方式：\n*   微信支付\n*   支付宝\n*   银行卡（借记卡/信用卡）\n*   Apple Pay",
+      "keyword_score": 5.0,
+      "llm_score": null,
+      "final_score": 5.0
+    },
+    {
+      "question": "如何联系人工客服？",
+      "category": "客服",
+      "answer": "您好！如果您需要联系人工客服，请在对话框中输入“**转人工**”，系统将为您转接。\n\n人工客服的服务时间为每天 **9:05-22:10**。\n\n请问还有什么我可以帮您的吗？",
+      "keyword_score": 5.0,
+      "llm_score": null,
+      "final_score": 5.0
+    },
+    {
+      "question": "商品多久能送到？",
+      "category": "物流",
+      "answer": "您好！关于商品的配送时间，通常情况如下：\n\n*   **一般地区**：1-3个工作日送达。\n*   **偏远地区**：3-7个工作日送达。\n*   **大促期间**：可能会延迟1-2天，敬请谅解。\n\n如果您已经下单，可以提供您的**订单号**，我会为您实时查询具体的物流状态和预计送达时间。",
+      "keyword_score": 5.0,
+      "llm_score": null,
+      "final_score": 5.0
+    },
+    {
+      "question": "商品发货地在哪里？",
+      "category": "物流",
+      "answer": "我们的商品主要从**广东深圳宝安区径贝新村**发货。\n\n部分商品可能会从其他仓库发出，具体的发货地请以您的订单信息为准。",
+      "keyword_score": 5.0,
+      "llm_score": null,
+      "final_score": 5.0
+    },
+    {
+      "question": "你是AI吗？",
+      "category": "身份",
+      "answer": "是的，我是一个人工智能助手。我是 Qwen（通义千问），由阿里巴巴集团旗下通义实验室自主研发的大语言模型。有什么我可以帮你的吗？",
+      "keyword_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0
+    }
+  ]
+}
